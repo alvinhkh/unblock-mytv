@@ -1,0 +1,22 @@
+{
+	"version": "1.0.0",
+
+	"name": "__MSG_extension_name__",
+	"description": "__MSG_extension_description__",
+
+	"default_locale": "en",
+	"manifest_version": 2,
+	"minimum_chrome_version": "22.0",
+	
+	"permissions": [
+		"declarativeWebRequest",
+		"<all_urls>"
+	],
+	
+	"background": {
+		"scripts": [
+			"event_page.js"
+		],
+		"persistent": false
+	}
+}
