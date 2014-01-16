@@ -127,3 +127,10 @@ function setup() {
  * Run when the extension installed / updated
  */
 chrome.runtime.onInstalled.addListener(setup);
+
+/**
+ * Get Rules when inspect event_page in console
+ */
+onRequest.getRules(null, function(rules) {
+	console.info('Rules that added:', JSON.stringify(rules, null, 2));
+});
