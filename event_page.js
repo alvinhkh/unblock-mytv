@@ -67,7 +67,8 @@ var ip_address = number_to_dot(
  * chrome.declarativeWebRequest API
  */
 var RequestMatcher = chrome.declarativeWebRequest.RequestMatcher;
-var RedirectByRegEx = chrome.declarativeWebRequest.RedirectByRegEx;
+var SetRequestHeader = chrome.declarativeWebRequest.SetRequestHeader;
+var onRequest = chrome.declarativeWebRequest.onRequest;
 
 function registerRules() {
 	var redirectRule = {
@@ -80,7 +81,7 @@ function registerRules() {
 			}),
 		],
 		actions: [
-			new chrome.declarativeWebRequest.SetRequestHeader({
+			new SetRequestHeader({
 				name: 'X-Forwarded-For', 
 				value: ip_address
 			}),
@@ -95,7 +96,7 @@ function registerRules() {
 			console.error('Error when adding rules:', chrome.extension.lastError.message);
 		} else {
 			console.info('Rules successfully added.');
-			chrome.declarativeWebRequest.onRequest.getRules(null, function(rules) {
+			onRequest.getRules(null, function(rules) {
 				console.info('Rules that added:', JSON.stringify(rules, null, 2));
 			});
 		}
@@ -104,7 +105,7 @@ function registerRules() {
 	/**
 	 * Add Rules
 	 */
-	chrome.declarativeWebRequest.onRequest.addRules([
+	onRequest.addRules([
 		redirectRule
 	], callback);
 }
@@ -113,7 +114,7 @@ function setup() {
 	/**
 	 * Remove previously added rules before adding new ones
 	 */
-	chrome.declarativeWebRequest.onRequest.removeRules(null, function() {
+	onRequest.removeRules(null, function() {
 		if (chrome.extension.lastError) {
 			console.error('Error when clearing rules:', chrome.extension.lastError.message);
 		} else {
