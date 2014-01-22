@@ -97,9 +97,9 @@ function registerRules() {
 		if (chrome.extension.lastError) {
 			console.error('Error when adding rules:', chrome.extension.lastError.message);
 		} else {
-			console.info('Rules successfully added.');
+			console.log('Rules successfully added.');
 			onRequest.getRules(null, function(rules) {
-				console.info('Rules that added:', JSON.stringify(rules, null, 2));
+				console.log('Rules that added:', JSON.stringify(rules, null, 2));
 			});
 		}
 	};
@@ -129,7 +129,7 @@ function setup() {
  * Get synced options and save them in localStorage
  */
 chrome.storage.local.get(null, function(value){ 
-	localStorage['custom_ip_address'] = value['custom_ip_address'] ? value['custom_ip_address'] : "0.0.0.0";
+	localStorage['custom_ip_address'] = value['custom_ip_address'] ? value['custom_ip_address'] : "";
 });
 
 /**

@@ -1,6 +1,6 @@
 {
 	"extension_name": { "message": "Unblock myTV" },
-	"extension_description": { "message": "Bypass blocks of oversea restriction of myTV player in tvb.com" },
+	"extension_description": { "message": "Bypass oversea restriction of myTV player in tvb.com" },
 
 	"title": {"message": "Custom IP address"},
 	"disabled": { "message": "Disabled" },

@@ -1,10 +1,10 @@
 var storage = chrome.storage.local;
 var messages = chrome.i18n.getMessage;
-var messageTimer;
 
 /**
  * Show a saved message and disappear after 10 seconds
  */
+var messageTimer;
 function showMessage(message) {
 	message = message ? message : "";
 	document.getElementById('reminder').style.display = "none";
@@ -65,7 +65,6 @@ function saveOptions(){
  * Get Options via Chrome Storage API
  */
 chrome.storage.onChanged.addListener(function(changes, namespace) {
-	console.debug(changes, namespace);
 	for (key in changes) {
 		var storageChange = changes[key];
 		if (key == 'custom_ip_address' && document.getElementById('custom_ip_address') && storageChange.newValue != undefined) {
@@ -77,7 +76,6 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 });
 
 document.addEventListener ('DOMContentLoaded', function() {
-	
 	/**
 	 * Display translated texts
 	 */
@@ -88,9 +86,10 @@ document.addEventListener ('DOMContentLoaded', function() {
 	document.getElementById('reminder').innerText = messages('message_empty_ip');
 	document.getElementById('button_save').innerText = messages('button_save');
 	document.getElementById('button_clear').innerText = messages('button_clear');
-
+	/**
+	 * Get and display synced options value
+	 */
 	getSyncedOptions();
-	
 	/**
 	 * Event that trigger to save options
 	 */
@@ -103,5 +102,4 @@ document.addEventListener ('DOMContentLoaded', function() {
 		document.getElementById('custom_ip_address').value = "";
 		saveOptions();
 	}, false);
-	
 }, false);
