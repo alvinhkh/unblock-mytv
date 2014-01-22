@@ -1,4 +1,14 @@
 {
 	"extension_name": { "message": "Unblock myTV" },
-	"extension_description": { "message": "Bypass blocks of oversea connection of myTV player in tvb.com" }
+	"extension_description": { "message": "Bypass blocks of oversea restriction of myTV player in tvb.com" },
+
+	"title": {"message": "Custom IP address"},
+	"disabled": { "message": "Disabled" },
+	"button_save": { "message": "Set" },
+	"button_clear": { "message": "Clear" },
+	
+	"message_saved_empty_ip": { "message": "Random IP address is set." },
+	"message_saved_ip": { "message": "New IP address is set." },
+	"message_invaild_ip": { "message": "Invaild IP address." },
+	"message_empty_ip": { "message": "Clear to disable custom IP address." }
 }

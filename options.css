@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400);
+* {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 100;
+	text-align: left;
+	color: #000;
+}
+div.wrapper {
+	width: 360px;
+	margin: 80px auto;
+}
+div.wrapper div {
+	margin: 10px 0;
+}
+h1, input, div.wrapper span {
+	height: 48px;
+	line-height: 48px;
+}
+h1 {
+	font-size: 2.4em;
+	font-weight: 300;
+}
+input {
+	font-size: 2.8em;
+	font-weight: 400;
+	text-align: center;
+	height: 68px;
+	line-height: 68px;
+	margin: 10px 0;
+}
+.button-container {
+	display: block;
+	text-align: center;
+}
+button {
+	border: 0;
+	outline: none;
+	background: #EEE;
+	color: #000;
+	cursor: pointer;
+	text-align: center;
+	font-size: 1.8em;
+	font-weight: 300;
+	height: 48px;
+	line-height: 48px;
+	margin: 2px 0;
+}
+button:hover {
+	background: #CCC;
+	color: #000;
+}
+button:active {
+	background: #AAA;
+	color: #FFF;
+}
+.button-container button {
+	width: 40%;
+}
+p {
+	font-size: 1.4em;
+	padding-left: 2px;
+}
+p#reminder {
+	font-size: 0.8em;
+}

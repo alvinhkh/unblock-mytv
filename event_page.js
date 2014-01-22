@@ -51,7 +51,7 @@ var random_selected_range = ip_address_range[random_number(0, ip_address_range.l
 /**
  * Random select an ip address in selected range
  */
-var ip_address = number_to_dot(
+var random_ip_address = number_to_dot(
 	random_number(
 		dot_to_number(
 			random_selected_range[0]
@@ -71,6 +71,8 @@ var SetRequestHeader = chrome.declarativeWebRequest.SetRequestHeader;
 var onRequest = chrome.declarativeWebRequest.onRequest;
 
 function registerRules() {
+	var ip_address = localStorage['custom_ip_address'] && localStorage['custom_ip_address'] != "" ? localStorage['custom_ip_address'] : random_ip_address;
+	
 	var redirectRule = {
 		priority: 100,
 		conditions: [
@@ -124,6 +126,13 @@ function setup() {
 }
 
 /**
+ * Get synced options and save them in localStorage
+ */
+chrome.storage.local.get(null, function(value){ 
+	localStorage['custom_ip_address'] = value['custom_ip_address'] ? value['custom_ip_address'] : "0.0.0.0";
+});
+
+/**
  * Run when the extension installed / updated
  */
 chrome.runtime.onInstalled.addListener(setup);
@@ -133,4 +142,17 @@ chrome.runtime.onInstalled.addListener(setup);
  */
 onRequest.getRules(null, function(rules) {
 	console.info('Rules that added:', JSON.stringify(rules, null, 2));
+});
+
+/**
+ * Get new sync options via Chrome Storage API
+ */
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+	for (key in changes) {
+		var storageChange = changes[key];
+		if (key == 'custom_ip_address') {
+			localStorage['custom_ip_address'] = storageChange.newValue;
+			setup();
+		}
+	}
 });
