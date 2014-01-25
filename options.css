@@ -8,20 +8,17 @@
 	text-align: left;
 	color: #000;
 }
-div.wrapper {
-	width: 360px;
-	margin: 80px auto;
+a {
+	color: #000;
+	text-decoration: none
 }
-div.wrapper div {
-	margin: 10px 0;
-}
-h1, input, div.wrapper span {
-	height: 48px;
-	line-height: 48px;
+a:hover {
+	text-decoration: underline
 }
 h1 {
 	font-size: 2.4em;
 	font-weight: 300;
+	text-align: center;
 }
 input {
 	font-size: 2.8em;
@@ -30,10 +27,6 @@ input {
 	height: 68px;
 	line-height: 68px;
 	margin: 10px 0;
-}
-.button-container {
-	display: block;
-	text-align: center;
 }
 button {
 	border: 0;
@@ -56,13 +49,44 @@ button:active {
 	background: #AAA;
 	color: #FFF;
 }
-.button-container button {
-	width: 40%;
-}
 p {
 	font-size: 1.4em;
 	padding-left: 2px;
 }
 p#reminder {
 	font-size: 0.8em;
+}
+.wrapper {
+	width: 360px;
+	margin: 80px auto;
+}
+.wrapper div {
+	margin: 10px 0;
+}
+.wrapper span {
+	height: 48px;
+	line-height: 48px;
+}
+.button-container {
+	display: block;
+	text-align: center;
+}
+.button-container > button {
+	width: 40%;
+}
+#title {
+	margin: 0 0 40px 0;
+}
+.icon {
+	width: 69px;
+	height: 69px;
+	margin: 0 6px;
+}
+#title > h1, #title > img {
+	display: inline;
+	vertical-align: middle;
+}
+#author_by {
+	margin: 0;
+	text-align: right;
 }

@@ -80,7 +80,9 @@ document.addEventListener ('DOMContentLoaded', function() {
 	 * Display translated texts
 	 */
 	document.title = messages('extension_name');
-	document.getElementById('title').innerText = messages('title');
+	document.getElementById('extension_name').innerText = messages('extension_name');
+	document.getElementById('by').innerText = messages('by');
+	document.getElementById('title_custom_ip_address').innerText = messages('custom_ip_address');
 	document.getElementById('custom_ip_address').setAttribute('placeholder', messages('disabled'));
 	document.getElementById('response_message').style.display = "none";
 	document.getElementById('reminder').innerText = messages('message_empty_ip');
