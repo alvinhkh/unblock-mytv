@@ -3,6 +3,9 @@
 A chrome extension that bypass oversea restriction of myTV player in tvb.com
 
 
+## Install
+Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/unblock-mytv/fkedckebojgndhcaonncliiljlfmkdef)
+
 ## Technical details
 
 - Uses [X-Forwarded-For](http://en.wikipedia.org/wiki/X-Forwarded-For) to pretend request connection from accessible places (like from Hong Kong).
