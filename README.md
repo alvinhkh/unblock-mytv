@@ -4,7 +4,8 @@ A chrome extension that bypass oversea restriction of myTV player in tvb.com
 
 
 ## Install
-Install from [Chrome Web Store](http://bit.ly/unblockmytv)
+Install from Chrome Web Store (http://bit.ly/unblockmytv)
+
 To switch channel from stable Chrome visit [here](http://www.chromium.org/getting-involved/dev-channel)
 
 ## Technical details
