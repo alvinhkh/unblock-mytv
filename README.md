@@ -4,12 +4,13 @@ A chrome extension that bypass oversea restriction of myTV player in tvb.com
 
 
 ## Install
-Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/unblock-mytv/fkedckebojgndhcaonncliiljlfmkdef)
+Install from [Chrome Web Store](http://bit.ly/unblockmytv)
+To switch channel from stable Chrome visit [here](http://www.chromium.org/getting-involved/dev-channel)
 
 ## Technical details
 
 - Uses [X-Forwarded-For](http://en.wikipedia.org/wiki/X-Forwarded-For) to pretend request connection from accessible places (like from Hong Kong).
-- Uses [declarativeWebRequest](https://developer.chrome.com/extensions/declarativeWebRequest.html) API (in beta and dev channel, as of Jan 2014).
+- Uses [declarativeWebRequest](https://developer.chrome.com/extensions/declarativeWebRequest.html) API (in beta and dev channel, as of March 2014).
  - Unlike [chrome.webRequest](https://developer.chrome.com/extensions/webRequest.html), [declarativeWebRequest](https://developer.chrome.com/extensions/declarativeWebRequest.html) + [event page](http://developer.chrome.com/extensions/event_pages.html) makes the extension loaded only when they are needed, which means no background pages and would not hold memory resourses.
 - Uses [chrome.storage](http://developer.chrome.com/extensions/storage.html) API to handle custom IP address.
 
